@@ -1,0 +1,19 @@
+{
+  "name": "@prenda-school/experiment-gpr-multiple-second",
+  "version": "1.0.0",
+  "description": "Experimenting with GitHub Packges; publish multiple packages from a repository; package 2 of 3.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prenda-school/experiment-gpr-multiple.git"
+  },
+  "author": "William Kelley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prenda-school/experiment-gpr-multiple/issues"
+  },
+  "homepage": "https://github.com/prenda-school/experiment-gpr-multiple#readme"
+}
