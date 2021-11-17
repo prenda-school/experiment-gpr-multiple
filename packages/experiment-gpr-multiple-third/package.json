@@ -1,7 +1,7 @@
 {
-  "name": "@prenda-school/experiment-gpr-multiple-second",
+  "name": "@prenda-school/experiment-gpr-multiple-third",
   "version": "1.0.0",
-  "description": "Experimenting with GitHub Packges; publish multiple packages from a repository; package 3 of 3.",
+  "description": "Experimenting with GitHub Packages; publish multiple packages from a repository; package 3 of 3.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
