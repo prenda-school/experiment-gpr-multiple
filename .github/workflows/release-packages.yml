@@ -8,25 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # Build first
-      - run: cd packages/experiment-gpr-multiple-first
       - uses: actions/setup-node@v2
         with:
-          node-version: 12
-      - run: npm ci
-      # - run: npm test
-      # Build second
-      - run: cd ../experiment-gpr-multiple-second
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 12
-      - run: npm ci
-      # - run: npm test
-      # Build third
-      - run: cd ../experiment-gpr-multiple-third
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 12
+          node-version: 14
+          cache-dependency-path: '**/package-lock.json'
       - run: npm ci
       # - run: npm test
 
@@ -38,33 +23,14 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v2
-      # Publish first
-      - run: cd packages/experiment-gpr-multiple-first
       - uses: actions/setup-node@v2
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      # Publish second
-      - run: cd ../experiment-gpr-multiple-second
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      # Publish third
-      - run: cd ../experiment-gpr-multiple-third
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
+      - run: |
+          npm publish packages/experiment-gpr-multiple-first
+          npm publish packages/experiment-gpr-multiple-second
+          npm publish packages/experiment-gpr-multiple-third
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
