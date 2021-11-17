@@ -13,11 +13,11 @@ jobs:
           node-version: 14
           cache-dependency-path: '**/package-lock.json'
       - run: cd packages/experiment-gpr-multiple-first && npm ci
-      # - run: cd packages/experiment-gpr-multiple-first && npm test
+      - run: cd packages/experiment-gpr-multiple-first && npm test
       - run: cd packages/experiment-gpr-multiple-second && npm ci
-      # - run: cd packages/experiment-gpr-multiple-second && npm test
+      - run: cd packages/experiment-gpr-multiple-second && npm test
       - run: cd packages/experiment-gpr-multiple-third && npm ci
-      # - run: cd packages/experiment-gpr-multiple-third && npm test
+      - run: cd packages/experiment-gpr-multiple-third && npm test
 
   publish-gpr:
     needs: build
